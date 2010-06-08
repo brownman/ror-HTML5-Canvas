@@ -1,0 +1,45 @@
+<script type="application/javascript">
+    window.onload = function () {
+        var canvas = document.getElementById("stars2");
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+
+            // Commonly Used Variables
+            w = ctx.canvas.width;
+            h = ctx.canvas.height;
+            canvCentreX = w/2;
+            canvCentreY = h/2;
+
+            // Clear Canvas
+            ctx.clearRect(0,0,w,h);
+
+            // Variables
+                /*Icon to Be Used*/ /* location = 'images/star128.png'; */
+                /*Icon width/heig*/ size = 128;
+                /*Spacing b/w ico*/ spacing = 5;
+                /*Shrink ico w/h */ shrink = 18;
+                /*Offset x then y*/ x = 0; y = 0;
+
+            // Get rating
+            rating = parseInt(<%=h @song.rating %>);
+
+            // Draw Stars
+            //                      icon location icon size, gap, resize, x&y offset
+            drawStarRating (rating, '/images/star128.png', size, spacing, shrink, x, y, ctx);
+
+        }
+    }
+</script>
+
+<p>
+  <b>Name:</b>
+  <%=h @song.name %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%=h @song.rating %>/10<br><canvas id='stars2' width='180' height='32'>Canvas Not Supported</canvas>
+</p>
+
+<%= link_to 'Edit', edit_song_path(@song) %> |
+<%= link_to 'Back', songs_path %>

@@ -1,0 +1,2364 @@
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-08 11:04:27) [GET]
+
+ActionController::RoutingError (No route matches "/song" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:04:30) [GET]
+  [4;36;1mSong Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: songs: SELECT * FROM "songs" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: songs: SELECT * FROM "songs" ):
+  app/controllers/songs_controller.rb:5:in `index'
+
+Rendered rescues/_trace (27.6ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateSongs (20100608150409)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "songs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "rating" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100608150409')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("songs")[0m
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:04:53) [GET]
+  [4;36;1mSong Load (0.3ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:04:53) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#new (for 127.0.0.1 at 2010-06-08 11:04:55) [GET]
+Rendering template within layouts/songs
+Rendering songs/new
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/songs/new]
+
+
+Processing SongsController#create (for 127.0.0.1 at 2010-06-08 11:05:00) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"V4CJYmbBrOBN1ou7KjPIGRFNJYfhq6qFuCXuPRLGnXA=", "song"=>{"rating"=>"6", "name"=>"Test"}}
+  [4;36;1mSong Create (0.4ms)[0m   [0;1mINSERT INTO "songs" ("name", "rating", "created_at", "updated_at") VALUES('Test', 6, '2010-06-08 15:05:00', '2010-06-08 15:05:00')[0m
+Redirected to http://localhost:3000/songs/1
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/songs]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 11:05:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:05:03) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:26:22) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 19ms (View: 15, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:26:23) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:26:23) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:26:24) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:26:24) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:32:35) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:32:36) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 58ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:32:36) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:32:37) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:32:37) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:32:37) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:32:38) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:32:38) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:37:28) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:37:29) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 56ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:37:30) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:37:30) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:37:30) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:37:30) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:37:30) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:41:24) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:41:24) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:41:25) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 66ms (View: 6, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:41:25) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:41:25) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:41:25) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:41:26) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:43:08) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:43:08) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:43:09) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:43:09) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 72ms (View: 6, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:43:23) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:43:24) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:43:24) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:43:24) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:45:36) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:45:37) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:45:38) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:45:38) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:45:38) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:45:38) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:45:38) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:45:38) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:45:39) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:45:39) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:45:39) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:45:58) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 59ms (View: 7, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:45:58) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:45:59) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:45:59) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:45:59) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:45:59) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:45:59) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:45:59) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:46:00) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 61ms (View: 57, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:46:00) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:46:12) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:46:18) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:46:19) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:46:19) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:46:20) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:46:20) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:46:20) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 76ms (View: 7, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:46:20) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:46:20) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:46:20) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:46:21) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:46:22) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:46:23) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:46:39) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 937ms (View: 931, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:48:26) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 59ms (View: 55, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 11:49:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#new (for 127.0.0.1 at 2010-06-08 11:49:27) [GET]
+Rendering template within layouts/songs
+Rendering songs/new
+Completed in 49ms (View: 45, DB: 0) | 200 OK [http://localhost/songs/new]
+
+
+Processing SongsController#create (for 127.0.0.1 at 2010-06-08 11:52:08) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"V4CJYmbBrOBN1ou7KjPIGRFNJYfhq6qFuCXuPRLGnXA=", "song"=>{"rating"=>"10", "name"=>"Song 2"}}
+  [4;36;1mSong Create (0.3ms)[0m   [0;1mINSERT INTO "songs" ("name", "rating", "created_at", "updated_at") VALUES('Song 2', 10, '2010-06-08 15:52:08', '2010-06-08 15:52:08')[0m
+Redirected to http://localhost:3000/songs/2
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/songs]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 11:52:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/2]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:52:10) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#edit (for 127.0.0.1 at 2010-06-08 11:53:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/edit
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/songs/1/edit]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 11:59:02) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 65ms (View: 62, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 11:59:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:00:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:00:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:00:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:00:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:00:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:00:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:00:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.3ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 60ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:01:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:01:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:01:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:01:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:05:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:06:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:06:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:06:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:06:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:06:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:06:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:06:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:06:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:06:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:06:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:06:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:06:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:06:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:06:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:06:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:06:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:13:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:13:07) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:13:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:13:07) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:13:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:13:39) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:13:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:13:39) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:13:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:13:40) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:13:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:13:40) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:13:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:13:40) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:13:40) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:13:41) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:16:05) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:16:05) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:16:06) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:16:06) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:19:05) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 59ms (View: 55, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:19:06) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:21:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:21:38) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:22:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:22:07) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:22:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:22:08) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:22:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 60ms (View: 56, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:22:08) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:22:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:22:08) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:22:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:22:08) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:22:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:22:09) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:22:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:22:35) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:22:38) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:22:39) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:24:05) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:24:05) [GET]
+  [4;35;1mSong Load (0.7ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:24:06) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:24:06) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:24:06) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:24:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:24:07) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:24:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:24:08) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:24:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:24:08) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:24:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:24:09) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:24:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 63ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:24:09) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:24:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:24:09) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:24:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:24:09) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:24:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:24:10) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:24:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:24:10) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:24:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:24:10) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:24:22) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:24:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:24:26) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:24:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:24:57) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:24:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:24:58) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:25:00) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:25:18) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:25:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:25:19) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:25:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:25:21) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:25:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:25:21) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:25:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:25:21) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:50:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:50:44) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:50:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:50:44) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:50:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:50:45) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:50:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:50:45) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:56:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:56:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:56:25) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:56:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:56:26) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:56:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:56:26) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:56:29) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/songs/]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:56:29) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:56:32) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/songs/]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:56:32) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:56:33) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/songs/]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:56:33) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:56:33) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/songs/]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:56:33) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:56:33) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/songs/]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:56:33) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:56:33) [GET]
+  [4;35;1mSong Load (0.7ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/songs/]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:56:33) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:56:33) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/songs/]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:56:33) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/songs/]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:56:34) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:56:34) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/songs/]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:56:34) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:56:35) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/songs/]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:56:35) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:56:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:56:41) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:56:42) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:56:44) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:56:44) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:56:44) [GET]
+  [4;36;1mSong Load (0.7ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 69ms (View: 7, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:56:45) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:56:45) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:56:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:56:49) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 12:56:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 12:56:52) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 12:56:56) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#edit (for 127.0.0.1 at 2010-06-08 13:00:31) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/edit
+Completed in 61ms (View: 57, DB: 0) | 200 OK [http://localhost/songs/2/edit]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 13:00:33) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:00:37) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/2]
+
+
+Processing SongsController#images to png (for 127.0.0.1 at 2010-06-08 13:00:37) [GET]
+  Parameters: {"id"=>"star128"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:00:54) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs/2]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:00:55) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/songs/2]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:00:55) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/2]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:00:55) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/2]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:00:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 65ms (View: 3, DB: 0) | 200 OK [http://localhost/songs/2]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:00:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/songs/2]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:00:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/songs/2]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:00:57) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/songs/2]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:01:23) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs/2]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:01:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/2]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:01:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/songs/2]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:01:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/songs/2]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:01:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSong Load (0.3ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 75ms (View: 4, DB: 0) | 200 OK [http://localhost/songs/2]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:01:25) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/2]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:01:25) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/2]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:01:25) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/songs/2]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 13:01:26) [GET]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:01:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 13:01:57) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 13:02:17) [GET]
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:02:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 13:03:43) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:03:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:04:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:04:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 13:05:06) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 13:05:24) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 13:05:33) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 63ms (View: 59, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#new (for 127.0.0.1 at 2010-06-08 13:05:45) [GET]
+Rendering template within layouts/songs
+Rendering songs/new
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/songs/new]
+
+
+Processing SongsController#create (for 127.0.0.1 at 2010-06-08 13:05:57) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"V4CJYmbBrOBN1ou7KjPIGRFNJYfhq6qFuCXuPRLGnXA=", "song"=>{"rating"=>"8", "name"=>"Rock"}}
+  [4;35;1mSong Create (0.4ms)[0m   [0mINSERT INTO "songs" ("name", "rating", "created_at", "updated_at") VALUES('Rock', 8, '2010-06-08 17:05:57', '2010-06-08 17:05:57')[0m
+Redirected to http://localhost:3000/songs/3
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/songs]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:05:57) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 3) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/3]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 13:05:59) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#new (for 127.0.0.1 at 2010-06-08 13:06:07) [GET]
+Rendering template within layouts/songs
+Rendering songs/new
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/songs/new]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 13:06:15) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#edit (for 127.0.0.1 at 2010-06-08 13:06:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/edit
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/songs/1/edit]
+
+
+Processing SongsController#update (for 127.0.0.1 at 2010-06-08 13:06:24) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"V4CJYmbBrOBN1ou7KjPIGRFNJYfhq6qFuCXuPRLGnXA=", "id"=>"1", "song"=>{"rating"=>"6", "name"=>"Rock Song"}}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+  [4;35;1mSong Update (0.3ms)[0m   [0mUPDATE "songs" SET "updated_at" = '2010-06-08 17:06:24', "name" = 'Rock Song' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/songs/1
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/songs/1]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:06:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 13:06:26) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#edit (for 127.0.0.1 at 2010-06-08 13:06:29) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/edit
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/songs/2/edit]
+
+
+Processing SongsController#update (for 127.0.0.1 at 2010-06-08 13:06:36) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"V4CJYmbBrOBN1ou7KjPIGRFNJYfhq6qFuCXuPRLGnXA=", "id"=>"2", "song"=>{"rating"=>"7", "name"=>"Rap Song"}}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+  [4;36;1mSong Update (0.2ms)[0m   [0;1mUPDATE "songs" SET "updated_at" = '2010-06-08 17:06:36', "name" = 'Rap Song', "rating" = 7 WHERE "id" = 2[0m
+Redirected to http://localhost:3000/songs/2
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/songs/2]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:06:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 2) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/2]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 13:06:37) [GET]
+  [4;36;1mSong Load (0.9ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#edit (for 127.0.0.1 at 2010-06-08 13:06:39) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 3) [0m
+Rendering template within layouts/songs
+Rendering songs/edit
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/songs/3/edit]
+
+
+Processing SongsController#update (for 127.0.0.1 at 2010-06-08 13:06:45) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"V4CJYmbBrOBN1ou7KjPIGRFNJYfhq6qFuCXuPRLGnXA=", "id"=>"3", "song"=>{"rating"=>"4", "name"=>"Pop Song"}}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 3) [0m
+  [4;35;1mSong Update (0.4ms)[0m   [0mUPDATE "songs" SET "updated_at" = '2010-06-08 17:06:45', "name" = 'Pop Song', "rating" = 4 WHERE "id" = 3[0m
+Redirected to http://localhost:3000/songs/3
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/songs/3]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:06:45) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 3) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/3]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 13:06:47) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#new (for 127.0.0.1 at 2010-06-08 13:06:50) [GET]
+Rendering template within layouts/songs
+Rendering songs/new
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/songs/new]
+
+
+Processing SongsController#create (for 127.0.0.1 at 2010-06-08 13:07:04) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"V4CJYmbBrOBN1ou7KjPIGRFNJYfhq6qFuCXuPRLGnXA=", "song"=>{"rating"=>"1", "name"=>"Garbage Song"}}
+  [4;36;1mSong Create (0.3ms)[0m   [0;1mINSERT INTO "songs" ("name", "rating", "created_at", "updated_at") VALUES('Garbage Song', 1, '2010-06-08 17:07:04', '2010-06-08 17:07:04')[0m
+Redirected to http://localhost:3000/songs/4
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/songs]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:07:04) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mSong Load (0.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 4) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/4]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 13:07:05) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 14ms (View: 10, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#new (for 127.0.0.1 at 2010-06-08 13:07:06) [GET]
+Rendering template within layouts/songs
+Rendering songs/new
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/songs/new]
+
+
+Processing SongsController#create (for 127.0.0.1 at 2010-06-08 13:07:15) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"V4CJYmbBrOBN1ou7KjPIGRFNJYfhq6qFuCXuPRLGnXA=", "song"=>{"rating"=>"2", "name"=>"Crappy Song"}}
+  [4;35;1mSong Create (0.3ms)[0m   [0mINSERT INTO "songs" ("name", "rating", "created_at", "updated_at") VALUES('Crappy Song', 2, '2010-06-08 17:07:15', '2010-06-08 17:07:15')[0m
+Redirected to http://localhost:3000/songs/5
+Completed in 60ms (DB: 0) | 302 Found [http://localhost/songs]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:07:15) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 5) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/5]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2010-06-08 13:07:19) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/songs
+Rendering songs/index
+Completed in 14ms (View: 11, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#show (for 127.0.0.1 at 2010-06-08 13:08:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSong Load (0.2ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 1) [0m
+Rendering template within layouts/songs
+Rendering songs/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/songs/1]

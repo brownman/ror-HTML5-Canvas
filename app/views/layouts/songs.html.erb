@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Songs: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+		<script type="application/javascript">
+			function drawStarRating (rateOutTen, imgFile, imgSize, starGap, starResize, xoff, yoff, ctx) {
+					// Create a new image.
+				  var img = new Image();
+
+
+				  // Once it's loaded draw the image on the canvas.
+				  img.addEventListener('load', function () {
+
+				  	if (rateOutTen != 0) {
+
+				  		if (rateOutTen >= 2) {
+						    ctx.drawImage(this, 0*(starGap+starResize)+xoff, yoff, starResize, starResize); // 1 star
+					    }
+					    if (rateOutTen >= 4) {
+					    	ctx.drawImage(this, 1*(starGap+starResize)+xoff, yoff, starResize, starResize); // 2 star
+					    }
+					    if (rateOutTen >= 6) {
+					    	ctx.drawImage(this, 2*(starGap+starResize)+xoff, yoff, starResize, starResize); // 3 star
+					    }
+					    if (rateOutTen >= 8) {
+					    	ctx.drawImage(this, 3*(starGap+starResize)+xoff, yoff, starResize, starResize); // 4 star
+					    }
+					    if (rateOutTen >= 10) {
+					    	ctx.drawImage(this, 4*(starGap+starResize)+xoff, yoff, starResize, starResize); // 5 star
+					    }
+
+				  		if ((rateOutTen%2) == 1) {
+				  			// A half star is required
+				  			if (rateOutTen == 1) {
+				  				ctx.drawImage(this, 0, 0, imgSize/2, imgSize, 0*(starGap+starResize)+xoff, yoff, starResize/2, starResize); // 0.5 star
+				  			}
+				  			if (rateOutTen == 3) {
+				  				ctx.drawImage(this, 0, 0, imgSize/2, imgSize, 1*(starGap+starResize)+xoff, yoff, starResize/2, starResize); // 1.5 star
+				  			}
+				  			if (rateOutTen == 5) {
+				  				ctx.drawImage(this, 0, 0, imgSize/2, imgSize, 2*(starGap+starResize)+xoff, yoff, starResize/2, starResize); // 2.5 star
+				  			}
+				  			if (rateOutTen == 7) {
+				  				ctx.drawImage(this, 0, 0, imgSize/2, imgSize, 3*(starGap+starResize)+xoff, yoff, starResize/2, starResize); // 3.5 star
+				  			}
+				  			if (rateOutTen == 9) {
+				  				ctx.drawImage(this, 0, 0, imgSize/2, imgSize, 4*(starGap+starResize)+xoff, yoff, starResize/2, starResize); // 4.5 star
+				  			}
+				  		}
+				  	}
+				  }, false);
+
+				  img.src = imgFile;
+			}
+		</script>
+</head>
+<body>
+
+<p style="color: green"><%= notice %></p>
+
+<%= yield %>
+
+</body>
+</html>
